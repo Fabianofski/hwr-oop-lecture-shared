@@ -74,7 +74,7 @@ class FancyFlashCard implements FlashCard {
             throw new IllegalArgumentException(
                     "Cannot create FlashCard without Question or Answer");
         }
-        if (answers == null || answers.contains(solution)) {
+        if (answers != null && !answers.contains(solution)) {
             throw new IllegalArgumentException(
                     "Answers, if provided, need to contain the solution");
         }
