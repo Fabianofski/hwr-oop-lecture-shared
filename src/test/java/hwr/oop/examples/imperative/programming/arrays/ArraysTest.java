@@ -80,7 +80,7 @@ class ArraysTest {
     void equals_TwoEqualArrays_IsFalseAndThusDumb() {
         int[] first = {1};
         int[] second = {1};
-        boolean plainEquals = first.equals(second);
+        boolean plainEquals = Arrays.equals(first, second);
         assertThat(plainEquals).isFalse();  // duh...
     }
 
@@ -89,9 +89,9 @@ class ArraysTest {
     void hashCode_TwoEqualArrays_IsNotEqualAndThusFunky() {
         int[] first = {1};
         int[] second = {1};
-        int firstHashCode = first.hashCode();
-        int secondHashCode = second.hashCode();
+        int firstHashCode = Arrays.hashCode(first);
+        int secondHashCode = Arrays.hashCode(second);
         assertThat(firstHashCode)
-                .isNotEqualTo(secondHashCode);  // duh...
+                .isEqualTo(secondHashCode);  // duh...
     }
 }

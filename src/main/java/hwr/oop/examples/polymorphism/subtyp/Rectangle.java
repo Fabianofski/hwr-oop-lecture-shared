@@ -20,6 +20,11 @@ class Rectangle implements Quadrangle {
     }
 
     @Override
+    public double getInternalAngleSum() {
+        return 360;
+    }
+
+    @Override
     public double[] getDistinctAngles() {
         return new double[]{90};
     }

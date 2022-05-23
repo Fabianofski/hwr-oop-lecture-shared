@@ -79,22 +79,26 @@ class GameOfLifeTest {
         cell_6_5.markAlive();
 
         // first step
+        System.out.println("First Step");
         game.proceed();
         assertThat(new Cell[]{cell_5_4, cell_5_5, cell_5_6}).allMatch(Cell::isAlive);
         assertThat(new Cell[]{cell_4_5, cell_6_5}).allMatch(Cell::isDead);
 
         // second step
+        System.out.println("Second Step");
         game.proceed();
         assertThat(new Cell[]{cell_4_5, cell_5_5, cell_6_5}).allMatch(Cell::isAlive);
         assertThat(new Cell[]{cell_5_4, cell_5_6}).allMatch(Cell::isDead);
 
         // third step
         game.proceed();
+        System.out.println("Third Step");
         assertThat(new Cell[]{cell_5_4, cell_5_5, cell_5_6}).allMatch(Cell::isAlive);
         assertThat(new Cell[]{cell_4_5, cell_6_5}).allMatch(Cell::isDead);
 
         // fourth step
         game.proceed();
+        System.out.println("Fourth Step");
         assertThat(new Cell[]{cell_4_5, cell_5_5, cell_6_5}).allMatch(Cell::isAlive);
         assertThat(new Cell[]{cell_5_4, cell_5_6}).allMatch(Cell::isDead);
     }
