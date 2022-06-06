@@ -17,7 +17,12 @@ public class StringBasedTest {
         Question question;
         @BeforeEach
         void setUp() {
-            question = new StringBasedQuestion("Question");
+            question = Question.create("Question");
+        }
+
+        @Test
+        void StringBasedQuestion_IsQuestion(){
+            assertThat(question).isInstanceOf(Question.class);
         }
 
         @Test
@@ -52,7 +57,12 @@ public class StringBasedTest {
         Solution solution;
         @BeforeEach
         void setUp() {
-            solution = new StringBasedSolution("Solution");
+            solution = Solution.create("Solution");
+        }
+
+        @Test
+        void StringBasedSolution_IsSolution() {
+            assertThat(solution).isInstanceOf(Solution.class);
         }
 
         @Test
@@ -96,7 +106,12 @@ public class StringBasedTest {
         Answer answer;
         @BeforeEach
         void setUp() {
-            answer = new StringBasedAnswer("Answer");
+            answer = Answer.create("Answer");
+        }
+
+        @Test
+        void StringBasedAnswer_IsAnswer() {
+            assertThat(answer).isInstanceOf(Answer.class);
         }
 
         @Test

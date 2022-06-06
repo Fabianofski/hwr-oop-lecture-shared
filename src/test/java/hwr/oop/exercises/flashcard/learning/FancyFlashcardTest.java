@@ -19,11 +19,11 @@ public class FancyFlashcardTest {
 
     @BeforeEach
     void setUp() {
-        question = new StringBasedQuestion("This is a question");
+        question = Question.create("This is a question");
         answers = new ArrayList<>();
         for (int i = 1; i < 4; i++) answers.add(new StringBasedAnswer(i + ". Answer"));
-        solution = new StringBasedSolution("3. Answer");
-        flashCard = new FancyFlashCard(question, answers, solution);
+        solution = Solution.create("3. Answer");
+        flashCard = FlashCard.create(question, answers, solution);
     }
 
     @Test
